@@ -16,9 +16,15 @@
         :label="$t('test.content')"
       />
     </v-card-text>
+    <v-card-text>
+      {{ testCheckResult }}
+    </v-card-text>
     <v-card-actions>
+      <v-btn @click.stop="checkTest">
+        {{ $t('test.check') }}
+      </v-btn>
       <v-btn
-        color="secondary"
+        :disabled="canStartTest"
         @click.stop="startTest"
       >
         {{ $t('test.start') }}
@@ -28,7 +34,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, computed, onBeforeMount } from 'vue';
 import {
   VBtn,
   VCard,
@@ -37,8 +43,35 @@ import {
   VCardTitle,
   VTextarea,
 } from 'vuetify/lib/components/index.mjs';
+import { useI18n } from 'vue-i18n';
+import { useTestStore } from '../stores/test';
+
+const { t: $t } = useI18n();
+const testStore = useTestStore();
 
 const testContent = ref('');
+const testCheckResult = computed(() => {
+  if (testStore.error.length) {
+    return testStore.error;
+  }
+  if (testStore.questions.length) {
+    return $t('test.testFound').replace('%d', testStore.questions.length);
+  }
+  return $t('test.noTestFound');
+});
 
-const startTest = () => {};
+const canStartTest = computed(() => testStore.questions.length === 0);
+
+const checkTest = () => {
+  testStore.updateTestSource(testContent.value);
+  testStore.parseTest();
+};
+
+const startTest = () => {
+  console.log('vamosallano');
+};
+
+onBeforeMount(() => {
+  testContent.value = testStore.source;
+});
 </script>

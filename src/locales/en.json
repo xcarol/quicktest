@@ -1,0 +1,20 @@
+{
+  "ca": "Català",
+  "ca-ES": "fallback:ca",
+  "en": "English",
+  "en-US": "fallback:en",
+  "es": "Español",
+  "languages": {
+    "ca": "Català",
+    "es": "Castellano",
+    "en": "English"
+  },
+  "global": {
+    "title": "Quick Test - Practise multiple-choice tests"
+  },
+  "test": {
+    "testInputDescription": "Indicate below the content of the test. This must have the output format of the tests generated with the questionnaire generator: ",
+    "content": "Enter the test content here",
+    "start": "Start test"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "ca": "Català",
+  "ca-ES": "fallback:ca",
+  "en": "English",
+  "en-US": "fallback:en",
+  "es": "Español",
+  "languages": {
+    "ca": "Català",
+    "es": "Castellano",
+    "en": "English"
+  },
+  "global": {
+    "title": "Quick Test - Practica qüestionaris de resposta múltiple"
+  },
+  "test": {
+    "testInputDescription": "Indica a continuació el contingut del test. Aquest ha de tenir el format de sortida dels test generats amb el generador de qüestionaris: ",
+    "content": "Introdueix el test aquí",
+    "start": "Inicia el test"
+  }
+}

@@ -15,6 +15,9 @@
   "test": {
     "testInputDescription": "Indicate below the content of the test. This must have the output format of the tests generated with the questionnaire generator: ",
     "content": "Enter the test content here",
-    "start": "Start test"
+    "start": "Start test",
+    "check": "Check test",
+    "noTestFound": "There is no question for the test.",
+    "testFound": "%d questions have been found."
   }
 }

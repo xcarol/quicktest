@@ -15,6 +15,9 @@
   "test": {
     "testInputDescription": "Indica a continuación el contenido del test. Éste debe tener el formato de salida de los test generados con el generador de cuestionarios: ",
     "content": "Introduce el test aquí",
-    "start": "Inicia el test"
+    "start": "Inicia el test",
+    "check": "Comprueba el test",
+    "noTestFound": "No hay preguntas para hacer el cuestionario.",
+    "testFound": "Se han detectado %d preguntas."
   }
 }

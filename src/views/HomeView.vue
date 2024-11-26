@@ -83,10 +83,12 @@ const checkTest = () => {
 };
 
 const startTest = () => {
-  router.push('test');
+  testStore.startTest();
+  router.push('test?question=1');
 };
 
 onBeforeMount(() => {
   testContent.value = testStore.source;
+  testStore.resetTest();
 });
 </script>

@@ -19,5 +19,9 @@
     "check": "Comprueba el test",
     "noTestFound": "No hay preguntas para hacer el cuestionario.",
     "testFound": "Se han detectado %d preguntas."
+  },
+  "questions": {
+    "solutions": "Selecciona una respuesta",
+    "error": "No se ha encontrado la pregunta %d"
   }
 }

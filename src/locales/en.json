@@ -18,6 +18,10 @@
     "start": "Start test",
     "check": "Check test",
     "noTestFound": "There is no question for the test.",
-    "testFound": "%d questions have been found."
+    "testFound": "%d questions have been found.",
+    "questions": {
+      "solutions": "Select an answer",
+      "error": "Question %d has not been found"
+    }
   }
 }

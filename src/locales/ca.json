@@ -19,5 +19,9 @@
     "check": "Comprova el test",
     "noTestFound": "No hi ha preguntes per fer el qüestionari.",
     "testFound": "S'han detectat %d preguntes."
+  },
+  "questions": {
+    "solutions": "Sel·lecciona una resposta",
+    "error": "No s'ha trobat la pregunta %d"
   }
 }

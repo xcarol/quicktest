@@ -83,6 +83,10 @@ const aposeParse = (source) => {
     }
   }
 
+  if (lastQuestionIsFinished(questions) === false) {
+    throwError(sourceInLines.length);
+  }
+
   return questions;
 };
 

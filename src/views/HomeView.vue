@@ -16,7 +16,10 @@
         :label="$t('test.content')"
       />
     </v-card-text>
-    <v-card-text>
+    <v-card-text
+      class="text-h4"
+      :style="testCheckColor"
+    >
       {{ testCheckResult }}
     </v-card-text>
     <v-card-actions>
@@ -50,6 +53,16 @@ const { t: $t } = useI18n();
 const testStore = useTestStore();
 
 const testContent = ref('');
+const testCheckColor = computed(() => {
+  if (testStore.error.length) {
+    return { color: 'red' };
+  }
+  if (testStore.questions.length) {
+    return { color: 'green' };
+  }
+  return {};
+});
+
 const testCheckResult = computed(() => {
   if (testStore.error.length) {
     return testStore.error;

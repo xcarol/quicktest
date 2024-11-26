@@ -38,6 +38,7 @@
 
 <script setup>
 import { ref, computed, onBeforeMount } from 'vue';
+import { useRouter } from 'vue-router';
 import {
   VBtn,
   VCard,
@@ -50,6 +51,7 @@ import { useI18n } from 'vue-i18n';
 import { useTestStore } from '../stores/test';
 
 const { t: $t } = useI18n();
+const router = useRouter();
 const testStore = useTestStore();
 
 const testContent = ref('');
@@ -81,7 +83,7 @@ const checkTest = () => {
 };
 
 const startTest = () => {
-  console.log('vamosallano');
+  router.push('test');
 };
 
 onBeforeMount(() => {

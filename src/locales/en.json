@@ -27,5 +27,11 @@
     "previous": "Previous question",
     "next": "Next question",
     "finish": "Finish test"
+  },
+  "solutions": {
+    "title": "Test result",
+    "error": "The test is not finished",
+    "back": "Back",
+    "start": "Make another test"
   }
 }

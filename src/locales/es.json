@@ -27,5 +27,11 @@
     "previous": "Pregunta anterior",
     "next": "Pregunta seguiente",
     "finish": "Acabar test"
+  },
+  "solutions": {
+    "title": "Resultaod del test",
+    "error": "El test no está terminado",
+    "back": "Volver atrás",
+    "start": "Hacer otro test"
   }
 }

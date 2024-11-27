@@ -36,16 +36,25 @@ export const useTestStore = defineStore('test', {
       }
       this.solutions.push(...new Array(this.test.length).fill(''));
     },
-    testQuestion(questionNumber) {
-      if (questionNumber < this.test.length || questionNumber > this.test.length) {
+    getQuestion(questionNumber) {
+      if (questionNumber <= 0 || questionNumber > this.test.length) {
         return {};
       }
       return this.test.at(questionNumber - 1);
     },
-    testSolution(questionNumber, solution) {
+    setSolution(questionNumber, solution) {
       if (questionNumber > 0 && questionNumber <= this.solutions.length) {
         this.solutions[questionNumber - 1] = solution;
       }
+    },
+    getSolution(questionNumber) {
+      if (questionNumber > 0 && questionNumber <= this.solutions.length) {
+        return this.solutions[questionNumber - 1];
+      }
+      return '';
+    },
+    countSolutions() {
+      return this.solutions.filter((value) => value !== '').length;
     },
   },
 });

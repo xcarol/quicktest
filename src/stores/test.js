@@ -6,8 +6,9 @@ export const useTestStore = defineStore('test', {
   state: () => ({
     source: useLocalStorage('testSource', ''),
     questions: useLocalStorage('testQuestions', []),
-    error: '',
+    solutions: [],
     test: [],
+    error: '',
   }),
   actions: {
     updateTestSource(source) {

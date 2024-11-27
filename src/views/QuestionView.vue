@@ -112,7 +112,7 @@ const nextQuestion = () => {
 };
 
 const finishTest = () => {
-  console.log('goto result');
+  router.push('solutions');
 };
 
 const solutionUpdated = (solution) => {

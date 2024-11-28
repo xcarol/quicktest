@@ -43,19 +43,11 @@ export const useTestStore = defineStore('test', {
 
       if (this.test.length) {
 
-        let testIndex = 0;
-        for (let questionIndex = 0; questionIndex < this.solutions.length; questionIndex += 1) {
-          const question = this.questions[questionIndex];
-          for (; testIndex < this.test.length; testIndex += 1) {
-            const test = this.test[testIndex];
-            if (test.title === question.title) {
-              [this.solutions[questionIndex], this.solutions[testIndex]] = [
-                this.solutions[testIndex],
-                this.solutions[questionIndex],
-              ];
-            }
-          }
-        }
+        const unsortedSolutions = [...this.solutions];
+        const sortedSolutions = this.questions.map((question) => {
+          return unsortedSolutions.find((solution) => question.solutions.includes(solution));
+        });
+        this.solutions = [...sortedSolutions];
         
         for (let questionIndex = 0; questionIndex < this.questions.length; questionIndex += 1) {
           const question = this.questions[questionIndex];

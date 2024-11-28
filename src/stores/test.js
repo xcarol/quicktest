@@ -37,6 +37,43 @@ export const useTestStore = defineStore('test', {
       }
       this.solutions.push(...new Array(this.test.length).fill(''));
     },
+    finishTest() {
+      let correctAnswers = 0;
+      let testAverage = 1;
+
+      if (this.test.length) {
+
+        let testIndex = 0;
+        for (let questionIndex = 0; questionIndex < this.solutions.length; questionIndex += 1) {
+          const question = this.questions[questionIndex];
+          for (; testIndex < this.test.length; testIndex += 1) {
+            const test = this.test[testIndex];
+            if (test.title === question.title) {
+              [this.solutions[questionIndex], this.solutions[testIndex]] = [
+                this.solutions[testIndex],
+                this.solutions[questionIndex],
+              ];
+            }
+          }
+        }
+        
+        for (let questionIndex = 0; questionIndex < this.questions.length; questionIndex += 1) {
+          const question = this.questions[questionIndex];
+
+          if (this.solutions.at(questionIndex) === question.solutions.at(question.answer - 1)) {
+            correctAnswers += 1;
+          }
+        }
+
+        testAverage = (correctAnswers / this.test.length) * 100;
+      }
+
+      return {
+        totalQuestions: this.test.length,
+        correctAnswers,
+        testAverage,
+      };
+    },
     getQuestion(questionNumber) {
       if (questionNumber <= 0 || questionNumber > this.test.length) {
         return {};

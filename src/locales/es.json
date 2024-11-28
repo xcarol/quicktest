@@ -32,6 +32,7 @@
     "title": "Resultaod del test",
     "error": "El test no está terminado",
     "back": "Volver atrás",
-    "start": "Hacer otro test"
+    "start": "Hacer otro test",
+    "brief": "Respuestas correctas: %d/%d. Promedio: %d%"
   }
 }

@@ -32,6 +32,7 @@
     "title": "Test result",
     "error": "The test is not finished",
     "back": "Back",
-    "start": "Make another test"
+    "start": "Make another test",
+    "brief": "Correct answers: %d/%d. Average: %d%"
   }
 }

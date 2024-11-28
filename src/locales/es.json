@@ -15,6 +15,23 @@
   "test": {
     "testInputDescription": "Indica a continuación el contenido del test. Éste debe tener el formato de salida de los test generados con el generador de cuestionarios: ",
     "content": "Introduce el test aquí",
-    "start": "Inicia el test"
+    "start": "Inicia el test",
+    "check": "Comprueba el test",
+    "noTestFound": "Comprueba el test antes de empezar",
+    "testFound": "Se han detectado %d preguntas."
+  },
+  "questions": {
+    "counter": "Pregunta %d de %d",
+    "solutions": "Selecciona una respuesta",
+    "error": "No se ha encontrado la pregunta %d",
+    "previous": "Pregunta anterior",
+    "next": "Pregunta seguiente",
+    "finish": "Acabar test"
+  },
+  "solutions": {
+    "title": "Resultaod del test",
+    "error": "El test no está terminado",
+    "back": "Volver atrás",
+    "start": "Hacer otro test"
   }
 }

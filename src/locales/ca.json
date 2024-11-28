@@ -32,6 +32,7 @@
     "title": "Resultat del test",
     "error": "El test no està acabat",
     "back": "Torna enrere",
-    "start": "Fer un altre test"
+    "start": "Fer un altre test",
+    "brief": "Respostes correctes: %d/%d. Mitjana: %d%"
   }
 }

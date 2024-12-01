@@ -25,11 +25,11 @@
     "solutions": "Selecciona una respuesta",
     "error": "No se ha encontrado la pregunta %d",
     "previous": "Pregunta anterior",
-    "next": "Pregunta seguiente",
+    "next": "Pregunta siguiente",
     "finish": "Acabar test"
   },
   "solutions": {
-    "title": "Resultaod del test",
+    "title": "Resultado del test",
     "error": "El test no está terminado",
     "back": "Volver atrás",
     "start": "Hacer otro test",

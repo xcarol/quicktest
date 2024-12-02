@@ -2,13 +2,16 @@
   <v-card>
     <v-card-title>{{ $t('global.title') }}</v-card-title>
     <v-card-text>
-      {{ $t('test.testInputDescription') }}
+      {{ $t('test.description') }}
       <a
         target="_blank"
         rel="noopener noreferrer"
         href="https://products.aspose.ai/total/es/ai-quiz-maker/pdf"
         >ASPOSE</a
       >
+      {{ $t('test.formatDescription') }}
+      <router-link to="/help">{{ $t('test.formatLink') }}</router-link>
+      .
     </v-card-text>
     <v-card-text>
       <v-textarea

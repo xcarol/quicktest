@@ -13,7 +13,9 @@
     "title": "Quick Test - Practise multiple-choice tests"
   },
   "test": {
-    "testInputDescription": "Indicate below the content of the test. This must have the output format of the tests generated with the questionnaire generator: ",
+    "description": "Indicate below the content of the test. This must have the output format of the tests generated with the questionnaire generator: ",
+    "formatDescription": "or any other tool that follows the ",
+    "formatLink": "format of a test",
     "content": "Enter the test content here",
     "start": "Start test",
     "check": "Check test",
@@ -34,5 +36,18 @@
     "back": "Back",
     "start": "Make another test",
     "brief": "Correct answers: %d/%d. Average: %d%"
+  },
+  "help": {
+    "title": "Question Format",
+    "line1": "Each question consists of three parts: Title, Possible Answers, Correct Answer Number.  \n",
+    "line2": "```\n\n1. Question title  \n   Possible answer 1  \n   Possible answer 2  \n   ... \nCorrect answer: X.  \n  \n```\n",
+    "line3": "Example  \n",
+    "line4": "```\n\n1. What color is the sky?  \n   Blue  \n   Black  \n   It depends on whether it is day or night  \n   None of the above  \nCorrect answer: 3.  \n  \n```\n",
+    "line5": "Please note that:  \n",
+    "line6": "- Questions must be in **sequential order** (1., 2., 3., ...)  \n",
+    "line7": "- The format of the question is [number][dot][space]Question  \n",
+    "line8": "- The text for the answer line must explicitly be **Correct answer: X**  \n",
+    "line9": "  - where X is the solution based on its position. In this example, **3** is _\"It depends on whether it is day or night\"_",
+    "back": "Go back"
   }
 }

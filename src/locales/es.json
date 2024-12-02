@@ -36,5 +36,18 @@
     "back": "Volver atrás",
     "start": "Hacer otro test",
     "brief": "Respuestas correctas: %d/%d. Promedio: %d%"
+  },
+  "help": {
+    "title": "Formato de cuestionario",
+    "line1": "Cada pregunta consta de tres partes: Título, Respuestas posibles, Número de respuesta correcta.  \n",
+    "line2": "```\n\n1. Título de la pregunta  \n   Respuesta posible 1  \n   Respuesta posible 2  \n   ... \nRespuesta correcta: X.  \n  \n```\n",
+    "line3": "Ejemplo  \n",
+    "line4": "```\n\n1. ¿De qué color es el cielo?  \n   Azul  \n   Negro  \n   Depende de si es de día o de noche  \n   Ninguna de las anteriores  \nRespuesta correcta: 3.  \n  \n```\n",
+    "line5": "Por favor, ten en cuenta que:  \n",
+    "line6": "- Las preguntas deben estar en **orden secuencial** (1., 2., 3., ...)  \n",
+    "line7": "- El formato de la pregunta es [número][punto][espacio]Pregunta  \n",
+    "line8": "- El texto de la línea de respuesta debe ser explícitamente **Respuesta correcta: X**  \n",
+    "line9": "  - donde X es la solución según su posición. En este ejemplo, **3** es _\"Depende de si es de día o de noche\"_",
+    "back": "Volver"
   }
 }

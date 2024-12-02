@@ -13,7 +13,9 @@
     "title": "Quick Test - Practica cuestionarios de respuesta múltiple"
   },
   "test": {
-    "testInputDescription": "Indica a continuación el contenido del test. Éste debe tener el formato de salida de los test generados con el generador de cuestionarios: ",
+    "description": "Indica a continuación el contenido del test. Éste debe tener el formato de salida de los test generados con el generador de cuestionarios: ",
+    "formatDescription": "o cualquier otra herramienta siempre que siga el ",
+    "formatLink": "formato del test",
     "content": "Introduce el test aquí",
     "start": "Inicia el test",
     "check": "Comprueba el test",

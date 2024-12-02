@@ -13,7 +13,9 @@
     "title": "Quick Test - Practica qüestionaris de resposta múltiple"
   },
   "test": {
-    "testInputDescription": "Indica a continuació el contingut del test. Aquest ha de tenir el format de sortida dels test generats amb el generador de qüestionaris: ",
+    "description": "Indica a continuació el contingut del test. Aquest ha de tenir el format de sortida dels test generats amb el generador de qüestionaris: ",
+    "formatDescription": "o qualsevol altra eina sempre que segueixi el ",
+    "formatLink": "format del test",
     "content": "Introdueix el test aquí",
     "start": "Inicia el test",
     "check": "Comprova el test",

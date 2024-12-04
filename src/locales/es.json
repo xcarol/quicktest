@@ -20,7 +20,8 @@
     "start": "Inicia el test",
     "check": "Comprueba el test",
     "noTestFound": "Comprueba el test antes de empezar",
-    "testFound": "Se han detectado %d preguntas."
+    "testFound": "Se han detectado %d preguntas.",
+    "new": "Nuevo test"
   },
   "questions": {
     "counter": "Pregunta %d de %d",
@@ -48,6 +49,6 @@
     "line7": "- El formato de la pregunta es [número][punto][espacio]Pregunta  \n",
     "line8": "- El texto de la línea de respuesta debe ser explícitamente **Respuesta correcta: X**  \n",
     "line9": "  - donde X es la solución según su posición. En este ejemplo, **3** es _\"Depende de si es de día o de noche\"_",
-    "back": "Volver"
+    "home": "Inicio"
   }
 }

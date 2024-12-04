@@ -35,6 +35,11 @@
       >
         {{ $t('test.start') }}
       </v-btn>
+      <v-btn
+        @click.stop="newTest"
+      >
+        {{ $t('test.new') }}
+      </v-btn>
     </v-card-actions>
   </v-card>
 </template>
@@ -88,6 +93,10 @@ const checkTest = () => {
 const startTest = () => {
   testStore.startTest();
   router.push('test?question=1');
+};
+
+const newTest = () => {
+  testContent.value = '';
 };
 
 onBeforeMount(() => {

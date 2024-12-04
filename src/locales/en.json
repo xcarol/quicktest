@@ -48,6 +48,6 @@
     "line7": "- The format of the question is [number][dot][space]Question  \n",
     "line8": "- The text for the answer line must explicitly be **Correct answer: X**  \n",
     "line9": "  - where X is the solution based on its position. In this example, **3** is _\"It depends on whether it is day or night\"_",
-    "back": "Go back"
+    "home": "Home"
   }
 }

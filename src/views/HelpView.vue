@@ -7,8 +7,8 @@
       </vue-markdown-render>
     </v-card-text>
     <v-card-actions>
-      <v-btn @click.stop="goBack">
-        {{ $t('help.back') }}
+      <v-btn @click.stop="goHome">
+        {{ $t('help.home') }}
       </v-btn>
     </v-card-actions>
   </v-card>
@@ -36,7 +36,8 @@ const help = ref(
     .concat($t('help.line9')),
 );
 
-const goBack = () => {
-  router.back();
+const goHome = () => {
+  router.push('/');
 };
+
 </script>

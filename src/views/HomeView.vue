@@ -26,20 +26,26 @@
       {{ testCheckResult }}
     </v-card-text>
     <v-card-actions>
-      <v-btn @click.stop="checkTest">
-        {{ $t('test.check') }}
-      </v-btn>
-      <v-btn
-        :disabled="canStartTest"
-        @click.stop="startTest"
-      >
-        {{ $t('test.start') }}
-      </v-btn>
-      <v-btn
-        @click.stop="newTest"
-      >
-        {{ $t('test.new') }}
-      </v-btn>
+      <v-row>
+        <v-col cols="auto">
+          <v-btn @click.stop="checkTest">
+            {{ $t('test.check') }}
+          </v-btn>
+        </v-col>
+        <v-col cols="auto">
+          <v-btn
+            :disabled="canStartTest"
+            @click.stop="startTest"
+          >
+            {{ $t('test.start') }}
+          </v-btn>
+        </v-col>
+        <v-col cols="auto">
+          <v-btn @click.stop="newTest">
+            {{ $t('test.new') }}
+          </v-btn>
+        </v-col>
+      </v-row>
     </v-card-actions>
   </v-card>
 </template>
@@ -49,10 +55,12 @@ import { ref, computed, onBeforeMount } from 'vue';
 import { useRouter } from 'vue-router';
 import {
   VBtn,
+  VCol,
   VCard,
   VCardActions,
   VCardText,
   VCardTitle,
+  VRow,
   VTextarea,
 } from 'vuetify/lib/components/index.mjs';
 import { useI18n } from 'vue-i18n';

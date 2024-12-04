@@ -20,7 +20,8 @@
     "start": "Inicia el test",
     "check": "Comprueba el test",
     "noTestFound": "Comprueba el test antes de empezar",
-    "testFound": "Se han detectado %d preguntas."
+    "testFound": "Se han detectado %d preguntas.",
+    "new": "Nuevo test"
   },
   "questions": {
     "counter": "Pregunta %d de %d",

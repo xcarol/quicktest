@@ -20,7 +20,8 @@
     "start": "Start test",
     "check": "Check test",
     "noTestFound": "Check test before start",
-    "testFound": "%d questions have been found."
+    "testFound": "%d questions have been found.",
+    "new": "New test"
   },
   "questions": {
     "counter": "Question %d of %d",

@@ -37,8 +37,8 @@ const lastQuestionIsFinished = (questions) => {
   return lastQuestion.answer !== 0;
 };
 
-const throwError = (line) => {
-  throw new Error(`Error at line ${line + 1}`);
+const throwError = (error, line) => {
+  throw new Error(`Error '${error}' at line ${line + 1}`);
 };
 
 const parse = (source) => {
@@ -59,7 +59,7 @@ const parse = (source) => {
 
         if (isQuestionNumberInSequence(questions, questionNumber)) {
           if (lastQuestionIsFinished(questions) === false) {
-            throwError(lineCount);
+            throwError('Last question is not finished', lineCount);
           }
           questions.push({
             title: isQuestion.at(1),
@@ -67,7 +67,7 @@ const parse = (source) => {
             answer: 0,
           });
         } else {
-          throwError(lineCount);
+          throwError('Question is not in sequence', lineCount);
         }
       } else if (isAnswer(trimmedLine)) {
         const answer = trimmedLine.split(CORRECT_ANSWER);
@@ -75,10 +75,10 @@ const parse = (source) => {
         if (answerNumber > 0) {
           setAnswer(questions, answerNumber);
         } else {
-          throwError(lineCount);
+          throwError('Invalid \'Correct answer:\'', lineCount);
         }
       } else if (addSolution(questions, trimmedLine) === false) {
-        throwError(lineCount);
+        throwError('No questions found', lineCount);
       }
     }
   }

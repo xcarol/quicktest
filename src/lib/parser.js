@@ -37,11 +37,11 @@ const lastQuestionIsFinished = (questions) => {
   return lastQuestion.answer !== 0;
 };
 
-const throwError = (line) => {
-  throw new Error(`Error at line ${line + 1}`);
+const throwError = (error, line) => {
+  throw new Error(`Error '${error}' at line ${line + 1}`);
 };
 
-const aposeParse = (source) => {
+const parse = (source) => {
   const questions = [];
 
   const sourceInLines = source.split(/\r\n|\r|\n/);
@@ -52,14 +52,14 @@ const aposeParse = (source) => {
     const trimmedLine = line.trim();
 
     if (trimmedLine.length > 0) {
-      const isQuestion = trimmedLine.split('. ');
+      const isQuestion = trimmedLine.split(/[.|-]+[ |\t]+/);
 
       if (isQuestion.length > 1) {
         const questionNumber = parseInt(isQuestion.at(0), 10);
 
         if (isQuestionNumberInSequence(questions, questionNumber)) {
           if (lastQuestionIsFinished(questions) === false) {
-            throwError(lineCount);
+            throwError('Last question is not finished', lineCount);
           }
           questions.push({
             title: isQuestion.at(1),
@@ -67,7 +67,7 @@ const aposeParse = (source) => {
             answer: 0,
           });
         } else {
-          throwError(lineCount);
+          throwError('Question is not in sequence', lineCount);
         }
       } else if (isAnswer(trimmedLine)) {
         const answer = trimmedLine.split(CORRECT_ANSWER);
@@ -75,10 +75,10 @@ const aposeParse = (source) => {
         if (answerNumber > 0) {
           setAnswer(questions, answerNumber);
         } else {
-          throwError(lineCount);
+          throwError('Invalid \'Correct answer:\'', lineCount);
         }
       } else if (addSolution(questions, trimmedLine) === false) {
-        throwError(lineCount);
+        throwError('No questions found', lineCount);
       }
     }
   }
@@ -90,4 +90,4 @@ const aposeParse = (source) => {
   return questions;
 };
 
-export default aposeParse;
+export default parse;

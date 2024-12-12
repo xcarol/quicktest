@@ -41,9 +41,9 @@
   "help": {
     "title": "Question Format",
     "line1": "Each question consists of three parts: Title, Possible Answers, Correct Answer Number.  \n",
-    "line2": "```\n\n1. Question title  \n   Possible answer 1  \n   Possible answer 2  \n   ... \nCorrect answer: X.  \n  \n```\n",
+    "line2": "```\n\n1. Question title  \n   Possible answer 1  \n   Possible answer 2  \n   ... \nCorrect answer: X  \n  \n```\n",
     "line3": "Example  \n",
-    "line4": "```\n\n1. What color is the sky?  \n   Blue  \n   Black  \n   It depends on whether it is day or night  \n   None of the above  \nCorrect answer: 3.  \n  \n```\n",
+    "line4": "```\n\n1. What color is the sky?  \n   Blue  \n   Black  \n   It depends on whether it is day or night  \n   None of the above  \nCorrect answer: 3  \n  \n```\n",
     "line5": "Please note that:  \n",
     "line6": "- Questions must be in **sequential order** (1., 2., 3., ...)  \n",
     "line7": "- The format of the question is [number][dot][space]Question  \n",

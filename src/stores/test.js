@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
 import { useLocalStorage } from '@vueuse/core';
-import aposeParser from '../lib/apose-parser';
+import textParser from '../lib/parser';
 
 export const useTestStore = defineStore('test', {
   state: () => ({
@@ -22,7 +22,7 @@ export const useTestStore = defineStore('test', {
     },
     parseTest() {
       try {
-        this.questions = aposeParser(this.source);
+        this.questions = textParser(this.source);
         this.test = [];
         this.error = '';
       } catch (err) {

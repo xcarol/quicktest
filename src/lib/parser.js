@@ -41,7 +41,7 @@ const throwError = (line) => {
   throw new Error(`Error at line ${line + 1}`);
 };
 
-const aposeParse = (source) => {
+const parse = (source) => {
   const questions = [];
 
   const sourceInLines = source.split(/\r\n|\r|\n/);
@@ -52,7 +52,7 @@ const aposeParse = (source) => {
     const trimmedLine = line.trim();
 
     if (trimmedLine.length > 0) {
-      const isQuestion = trimmedLine.split('. ');
+      const isQuestion = trimmedLine.split(/[.|-]+[ |\t]+/);
 
       if (isQuestion.length > 1) {
         const questionNumber = parseInt(isQuestion.at(0), 10);
@@ -90,4 +90,4 @@ const aposeParse = (source) => {
   return questions;
 };
 
-export default aposeParse;
+export default parse;

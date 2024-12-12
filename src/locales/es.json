@@ -47,7 +47,7 @@
     "line5": "Por favor, ten en cuenta que:  \n",
     "line6": "- Las preguntas deben estar en **orden secuencial** (1., 2., 3., ...)  \n",
     "line7": "- El formato de la pregunta es [número][punto][espacio]Pregunta  \n",
-    "line8": "- El texto de la línea de respuesta debe ser explícitamente **Correct answer: X**  \n",
+    "line8": "- El texto de la línea de respuesta debe ser explícitamente **Respuesta correcta: X**  \n",
     "line9": "  - donde X es la solución según su posición. En este ejemplo, **3** es _\"Depende de si es de día o de noche\"_",
     "home": "Inicio"
   }

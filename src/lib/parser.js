@@ -1,4 +1,4 @@
-const CORRECT_ANSWER = 'Correct answer: ';
+const CORRECT_ANSWER = 'Respuesta correcta: ';
 
 const addSolution = (questions, solution) => {
   if (questions.length === 0) {
@@ -75,7 +75,7 @@ const parse = (source) => {
         if (answerNumber > 0) {
           setAnswer(questions, answerNumber);
         } else {
-          throwError('Invalid \'Correct answer:\'', lineCount);
+          throwError("Invalid 'Respuesta correcta:'", lineCount);
         }
       } else if (addSolution(questions, trimmedLine) === false) {
         throwError('No questions found', lineCount);

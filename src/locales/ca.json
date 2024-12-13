@@ -41,13 +41,13 @@
   "help": {
     "title": "Format del qüestionari",
     "line1": "Cada pregunta es composa de tres parts: Títol, Possibles solucions, Número de la resposta correcta.  \n",
-    "line2": "```\n\n1. Titol de la pregunta  \n   Possible solució 1  \n   Possible solució 2  \n   ... \nRespuesta correcta: X  \n  \n```\n",
+    "line2": "```\n\n1. Titol de la pregunta  \n   Possible solució 1  \n   Possible solució 2  \n   ... \nResposta correcte: X  \n  \n```\n",
     "line3": "Exemple  \n",
-    "line4": "```\n\n1. De quin color és el cel?  \n   Blau  \n   Negre  \n   Depen de si és de dia o de nit \n   Ninguna de les anteriors \nRespuesta correcta: 3  \n  \n```\n",
+    "line4": "```\n\n1. De quin color és el cel?  \n   Blau  \n   Negre  \n   Depen de si és de dia o de nit \n   Ninguna de les anteriors \nResposta correcte: 3  \n  \n```\n",
     "line5": "Cal tenir en compte que:  \n",
     "line6": "- les preguntes han d'estar en **ordre seqüencial** (1. , 2. , 3. , ...)  \n",
     "line7": "- El format de la pregunta és [numero][punt][espai]Pregunta  \n",
-    "line8": "- el text de la línia de la resposta ha de ser explícitament **Respuesta correcta: X**  \n",
+    "line8": "- el text de la línia de la resposta ha de ser explícitament **Resposta correcte: X**  \n",
     "line9": "  -  on X és la solució segons la seva posició. En aquest exemple, **3** és _\"Depen de si és de dia o de nit\"_",
     "home": "Inici"
   }

@@ -21,7 +21,8 @@
     "check": "Check test",
     "noTestFound": "Check test before start",
     "testFound": "%d questions have been found.",
-    "new": "New test"
+    "new": "New test",
+    "selectTest": "Select a test"
   },
   "questions": {
     "counter": "Question %d of %d",

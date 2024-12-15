@@ -21,7 +21,8 @@
     "check": "Comprova el test",
     "noTestFound": "Comprova el test abans de començar",
     "testFound": "S'han detectat %d preguntes.",
-    "new": "Nou test"
+    "new": "Nou test",
+    "selectTest": "Sel·lecciona un test"
   },
   "questions": {
     "counter": "Pregunta %d de %d",

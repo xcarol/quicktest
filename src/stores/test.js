@@ -2,6 +2,11 @@ import { defineStore } from 'pinia';
 import { useLocalStorage } from '@vueuse/core';
 import textParser from '../lib/parser';
 
+const appTests = [
+  { name: 'a', content: 'b' },
+  { name: '1', content: '2' },
+];
+
 export const useTestStore = defineStore('test', {
   state: () => ({
     source: useLocalStorage('testSource', ''),
@@ -9,8 +14,18 @@ export const useTestStore = defineStore('test', {
     solutions: [],
     test: [],
     error: '',
+    tests: appTests,
   }),
   actions: {
+    getTestByName(name) {
+      for (let numTest = 0; numTest < this.tests.length; numTest += 1) {
+        const test = this.tests[numTest];
+        if (test.name === name) {
+          return test.content;
+        }
+      }
+      return '';
+    },
     updateTestSource(source) {
       this.source = source;
     },
@@ -42,13 +57,12 @@ export const useTestStore = defineStore('test', {
       let testAverage = 1;
 
       if (this.test.length) {
-
         const unsortedSolutions = [...this.solutions];
         const sortedSolutions = this.questions.map((question) => {
           return unsortedSolutions.find((solution) => question.solutions.includes(solution));
         });
         this.solutions = [...sortedSolutions];
-        
+
         for (let questionIndex = 0; questionIndex < this.questions.length; questionIndex += 1) {
           const question = this.questions[questionIndex];
 

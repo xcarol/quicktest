@@ -14,6 +14,9 @@
       .
     </v-card-text>
     <v-card-text>
+      <test-selector @selected-test="selectTest"></test-selector>
+    </v-card-text>
+    <v-card-text>
       <v-textarea
         v-model="testContent"
         :label="$t('test.content')"
@@ -65,6 +68,7 @@ import {
 } from 'vuetify/lib/components/index.mjs';
 import { useI18n } from 'vue-i18n';
 import { useTestStore } from '../stores/test';
+import TestSelector from '../components/TestSelector.vue';
 
 const { t: $t } = useI18n();
 const router = useRouter();
@@ -105,6 +109,10 @@ const startTest = () => {
 
 const newTest = () => {
   testContent.value = '';
+};
+
+const selectTest = (name) => {
+  testContent.value = testStore.getTestByName(name);
 };
 
 onBeforeMount(() => {

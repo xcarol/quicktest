@@ -33,11 +33,22 @@ const help = ref(
     .concat($t('help.line6'))
     .concat($t('help.line7'))
     .concat($t('help.line8'))
-    .concat($t('help.line9')),
+    .concat($t('help.line9'))
+    .concat($t('help.line10'))
+    .concat($t('help.line11'))
+    .concat($t('help.line12'))
+    .concat($t('help.line13'))
+    .concat($t('help.line14'))
+    .concat($t('help.line15'))
+    .concat($t('help.line16'))
+    .concat($t('help.line17'))
+    .concat($t('help.line18'))
+    .concat($t('help.line19'))
+    .concat($t('help.line20'))
+    .concat($t('help.line21')),
 );
 
 const goHome = () => {
   router.push('/');
 };
-
 </script>

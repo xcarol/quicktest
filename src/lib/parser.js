@@ -1,4 +1,6 @@
-const CORRECT_ANSWER = 'Respuesta correcta: ';
+const RESPOSTA_CORRECTE = 'resposta correcte:';
+const RESPUESTA_CORRECTA = 'respuesta correcta:';
+const CORRECT_ANSWER = 'correct answer:';
 
 const addSolution = (questions, solution) => {
   if (questions.length === 0) {
@@ -26,7 +28,24 @@ const isQuestionNumberInSequence = (questions, number) => {
 };
 
 const isAnswer = (answer) => {
-  return answer.slice(0, CORRECT_ANSWER.length) === CORRECT_ANSWER;
+  return (
+    answer.toLowerCase().slice(0, RESPOSTA_CORRECTE.length) === RESPOSTA_CORRECTE ||
+    answer.toLowerCase().slice(0, RESPUESTA_CORRECTA.length) === RESPUESTA_CORRECTA ||
+    answer.toLowerCase().slice(0, CORRECT_ANSWER.length) === CORRECT_ANSWER
+  );
+};
+
+const getAnswer = (answer) => {
+  if (answer.toLowerCase().slice(0, RESPOSTA_CORRECTE.length) === RESPOSTA_CORRECTE) {
+    return answer.split(RESPOSTA_CORRECTE);
+  }
+  if (answer.toLowerCase().slice(0, RESPUESTA_CORRECTA.length) === RESPUESTA_CORRECTA) {
+    return answer.split(RESPUESTA_CORRECTA);
+  }
+  if (answer.toLowerCase().slice(0, CORRECT_ANSWER.length) === CORRECT_ANSWER) {
+    return answer.split(CORRECT_ANSWER);
+  }
+  return answer;
 };
 
 const lastQuestionIsFinished = (questions) => {
@@ -70,7 +89,7 @@ const parse = (source) => {
           throwError('Question is not in sequence', lineCount);
         }
       } else if (isAnswer(trimmedLine)) {
-        const answer = trimmedLine.split(CORRECT_ANSWER);
+        const answer = getAnswer(trimmedLine);
         const answerNumber = parseInt(answer.at(1), 10);
         if (answerNumber > 0) {
           setAnswer(questions, answerNumber);

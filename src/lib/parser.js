@@ -32,11 +32,20 @@ const setAnswer = (questions, number) => {
   return true;
 };
 
+const setIlernaAnswer = (questions) => {
+  if (questions.length === 0) {
+    return false;
+  }
+  const lastQuestion = questions.at(questions.length - 1);
+  lastQuestion.answer = lastQuestion.solutions.length;
+  return true;
+};
+
 const isQuestionNumberInSequence = (questions, number) => {
   return number === questions.length + 1;
 };
 
-const isAnswer = (answer) => {
+const isAposeAnswer = (answer) => {
   return (
     answer.toLowerCase().slice(0, RESPOSTA_CORRECTE.length) === RESPOSTA_CORRECTE ||
     answer.toLowerCase().slice(0, RESPUESTA_CORRECTA.length) === RESPUESTA_CORRECTA ||
@@ -44,8 +53,22 @@ const isAnswer = (answer) => {
   );
 };
 
-const isAsteriskAnswer = (answer) => {
+const isIlernaAnswer = (answer) => {
   return answer.split(')').at(0).trim() === '*';
+};
+
+const isIlernaSolution = (solution) => {
+  const solutionParts = solution.split(')');
+  return solutionParts.length === 2 && solutionParts.at(0).trim() !== '';
+};
+
+const isIlernaTest = (test) => {
+  for (let lineCount = 0; lineCount < test.length; lineCount += 1) {
+    if (isIlernaSolution(test.at(lineCount))) {
+      return true;
+    }
+  }
+  return false;
 };
 
 const getAnswer = (answer) => {
@@ -77,6 +100,7 @@ const parse = (source) => {
   const questions = [];
 
   const sourceInLines = source.split(/\r\n|\r|\n/);
+  const ilernaTest = isIlernaTest(sourceInLines);
 
   for (let lineCount = 0; lineCount < sourceInLines.length; lineCount += 1) {
     const line = sourceInLines[lineCount];
@@ -101,19 +125,30 @@ const parse = (source) => {
         } else {
           throwError('Question is not in sequence', lineCount);
         }
-      } else if (isAsteriskAnswer(trimmedLine)) {
+      } else if (isIlernaAnswer(trimmedLine)) {
         if (addSolution(questions, trimmedLine) === false) {
           throwError('No questions found', lineCount);
         }
-        setAnswer(questions, questions.length);
-      } else if (isAnswer(trimmedLine)) {
+        if (setIlernaAnswer(questions) === false) {
+          throwError('Incorrect answer', lineCount);
+        }
+    } else if (isAposeAnswer(trimmedLine)) {
         const answer = getAnswer(trimmedLine);
         const answerNumber = parseInt(answer.at(1), 10);
         if (answerNumber > 0) {
-          setAnswer(questions, answerNumber);
+          if (setAnswer(questions, answerNumber) === false) {
+            throwError('Incorrect answer', lineCount);
+          }
         } else {
           throwError("Invalid 'Respuesta correcta:'", lineCount);
         }
+      } else if (
+        ilernaTest &&
+        isIlernaSolution(trimmedLine) === false &&
+        lastQuestionIsFinished(questions) === false
+      ) {
+        const question = questions.at(questions.length - 1);
+        question.title = `${question.title} ${trimmedLine}`;
       } else if (addSolution(questions, trimmedLine) === false) {
         throwError('No questions found', lineCount);
       }

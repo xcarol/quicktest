@@ -1,6 +1,17 @@
+/* eslint-disable import/no-unresolved */
 import { defineStore } from 'pinia';
 import { useLocalStorage } from '@vueuse/core';
 import textParser from '../lib/parser';
+
+const testM01V01 = await import('../../ilerna-tests/M01 - V1 - CONTEXTO DE LA INTERVENCIÓN SOCIAL.txt?raw');
+const testM01V02 = await import('../../ilerna-tests/M01 - V2 - CONTEXTO DE LA INTERVENCIÓN SOCIAL.txt?raw');
+const testM01V03 = await import('../../ilerna-tests/M01 - V3 - CONTEXTO DE LA INTERVENCIÓN SOCIAL.txt?raw');
+
+const appTests = [
+  { name: 'M01 - V1 - CONTEXTO DE LA INTERVENCIÓN SOCIAL', content: testM01V01.default },
+  { name: 'M01 - V2 - CONTEXTO DE LA INTERVENCIÓN SOCIAL', content: testM01V02.default },
+  { name: 'M01 - V3 - CONTEXTO DE LA INTERVENCIÓN SOCIAL', content: testM01V03.default },
+];
 
 export const useTestStore = defineStore('test', {
   state: () => ({
@@ -9,8 +20,18 @@ export const useTestStore = defineStore('test', {
     solutions: [],
     test: [],
     error: '',
+    tests: appTests,
   }),
   actions: {
+    getTestByName(name) {
+      for (let numTest = 0; numTest < this.tests.length; numTest += 1) {
+        const test = this.tests[numTest];
+        if (test.name === name) {
+          return test.content;
+        }
+      }
+      return '';
+    },
     updateTestSource(source) {
       this.source = source;
     },
@@ -42,13 +63,12 @@ export const useTestStore = defineStore('test', {
       let testAverage = 1;
 
       if (this.test.length) {
-
         const unsortedSolutions = [...this.solutions];
         const sortedSolutions = this.questions.map((question) => {
           return unsortedSolutions.find((solution) => question.solutions.includes(solution));
         });
         this.solutions = [...sortedSolutions];
-        
+
         for (let questionIndex = 0; questionIndex < this.questions.length; questionIndex += 1) {
           const question = this.questions[questionIndex];
 

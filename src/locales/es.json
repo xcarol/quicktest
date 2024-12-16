@@ -21,7 +21,8 @@
     "check": "Comprueba el test",
     "noTestFound": "Comprueba el test antes de empezar",
     "testFound": "Se han detectado %d preguntas.",
-    "new": "Nuevo test"
+    "new": "Nuevo test",
+    "selectTest": "Selecciona un test"
   },
   "questions": {
     "counter": "Pregunta %d de %d",
@@ -39,16 +40,28 @@
     "brief": "Respuestas correctas: %d/%d. Promedio: %d%"
   },
   "help": {
-    "title": "Formato de cuestionario",
-    "line1": "Cada pregunta consta de tres partes: Título, Respuestas posibles, Número de respuesta correcta.  \n",
-    "line2": "```\n\n1. Título de la pregunta  \n   Respuesta posible 1  \n   Respuesta posible 2  \n   ... \nRespuesta correcta: X  \n  \n```\n",
-    "line3": "Ejemplo  \n",
-    "line4": "```\n\n1. ¿De qué color es el cielo?  \n   Azul  \n   Negro  \n   Depende de si es de día o de noche  \n   Ninguna de las anteriores  \nRespuesta correcta: 3  \n  \n```\n",
-    "line5": "Por favor, ten en cuenta que:  \n",
-    "line6": "- Las preguntas deben estar en **orden secuencial** (1., 2., 3., ...)  \n",
-    "line7": "- El formato de la pregunta es [número][punto][espacio]Pregunta  \n",
-    "line8": "- El texto de la línea de respuesta debe ser explícitamente **Respuesta correcta: X**  \n",
-    "line9": "  - donde X es la solución según su posición. En este ejemplo, **3** es _\"Depende de si es de día o de noche\"_",
+    "title": "Formato de los cuestionarios",
+    "line1": "### APOSE\n",
+    "line2": "Cada pregunta se compone de tres partes: Título, Posibles soluciones, Número de la respuesta correcta.  \n",
+    "line3": "```\n\n1. Título de la pregunta  \n   Posible solución 1  \n   Posible solución 2  \n   ... \nRespuesta correcta: X  \n  \n```\n",
+    "line4": "Ejemplo  \n",
+    "line5": "```\n\n1. ¿De qué color es el cielo?  \n   Azul  \n   Negro  \n   Depende de si es de día o de noche \n   Ninguna de las anteriores \nRespuesta correcta: 3  \n  \n```\n",
+    "line6": "Es importante tener en cuenta que:  \n",
+    "line7": "- las preguntas deben estar en **orden secuencial** (1. , 2. , 3. , ...)  \n",
+    "line8": "- el formato de la pregunta es [número][punto][espacio]Pregunta  \n",
+    "line9": "- el texto de la línea de la respuesta debe ser explícitamente **Respuesta correcta: X**  \n",
+    "line10": "  -  donde X es la solución según su posición. En este ejemplo, **3** es _\"Depende de si es de día o de noche\"_  \n",
+    "line11": "  \n",
+    "line12": "### ILERNA\n",
+    "line13": "Cada pregunta se compone de dos partes: Título y Posibles soluciones.  \n",
+    "line14": "```\n\n1- Título de la pregunta  \n   a) posible solución 1  \n   b) posible solución 2  \n   ... \n  \n```\n",
+    "line15": "Ejemplo  \n",
+    "line16": "(En los tests de Ilerna la respuesta correcta viene marcada en color rojo. Como aquí no tenemos colores, sustituiremos el enumerador de la respuesta correcta por un asterisco)\n",
+    "line17": "```\n\n1- ¿De qué color es el cielo?  \n   a) Azul  \n   b) Negro  \n   *) Depende de si es de día o de noche \n   d) Ninguna de las anteriores \n  \n```\n",
+    "line18": "Es importante tener en cuenta que:  \n",
+    "line19": "- las preguntas deben estar en **orden secuencial** (1. , 2. , 3. , ...)  \n",
+    "line20": "- el formato de la pregunta es [número][guion][espacio]Pregunta. La pregunta puede constar de más de una línea.  \n",
+    "line21": "- el formato de la respuesta es [letra][paréntesis cerrado][espacio]Respuesta.  \n",
     "home": "Inicio"
   }
 }

@@ -21,7 +21,8 @@
     "check": "Comprova el test",
     "noTestFound": "Comprova el test abans de començar",
     "testFound": "S'han detectat %d preguntes.",
-    "new": "Nou test"
+    "new": "Nou test",
+    "selectTest": "Sel·lecciona un test"
   },
   "questions": {
     "counter": "Pregunta %d de %d",
@@ -39,16 +40,28 @@
     "brief": "Respostes correctes: %d/%d. Mitjana: %d%"
   },
   "help": {
-    "title": "Format del qüestionari",
-    "line1": "Cada pregunta es composa de tres parts: Títol, Possibles solucions, Número de la resposta correcta.  \n",
-    "line2": "```\n\n1. Titol de la pregunta  \n   Possible solució 1  \n   Possible solució 2  \n   ... \nResposta correcte: X  \n  \n```\n",
-    "line3": "Exemple  \n",
-    "line4": "```\n\n1. De quin color és el cel?  \n   Blau  \n   Negre  \n   Depen de si és de dia o de nit \n   Ninguna de les anteriors \nResposta correcte: 3  \n  \n```\n",
-    "line5": "Cal tenir en compte que:  \n",
-    "line6": "- les preguntes han d'estar en **ordre seqüencial** (1. , 2. , 3. , ...)  \n",
-    "line7": "- El format de la pregunta és [numero][punt][espai]Pregunta  \n",
-    "line8": "- el text de la línia de la resposta ha de ser explícitament **Resposta correcte: X**  \n",
-    "line9": "  -  on X és la solució segons la seva posició. En aquest exemple, **3** és _\"Depen de si és de dia o de nit\"_",
+    "title": "Format dels qüestionaris",
+    "line1": "### APOSE\n",
+    "line2": "Cada pregunta es composa de tres parts: Títol, Possibles solucions, Número de la resposta correcta.  \n",
+    "line3": "```\n\n1. Titol de la pregunta  \n   Possible solució 1  \n   Possible solució 2  \n   ... \nResposta correcte: X  \n  \n```\n",
+    "line4": "Exemple  \n",
+    "line5": "```\n\n1. De quin color és el cel?  \n   Blau  \n   Negre  \n   Depen de si és de dia o de nit \n   Ninguna de les anteriors \nResposta correcte: 3  \n  \n```\n",
+    "line6": "Cal tenir en compte que:  \n",
+    "line7": "- les preguntes han d'estar en **ordre seqüencial** (1. , 2. , 3. , ...)  \n",
+    "line8": "- el format de la pregunta és [numero][punt][espai]Pregunta  \n",
+    "line9": "- el text de la línia de la resposta ha de ser explícitament **Resposta correcte: X**  \n",
+    "line10": "  -  on X és la solució segons la seva posició. En aquest exemple, **3** és _\"Depen de si és de dia o de nit\"_  \n",
+    "line11": "  \n",
+    "line12": "### ILERNA\n",
+    "line13": "Cada pregunta es composa de dues parts: Títol i Possibles solucions.  \n",
+    "line14": "```\n\n1- Titol de la pregunta  \n   a) possible solució 1  \n   b) possible solució 2  \n   ... \n  \n```\n",
+    "line15": "Exemple  \n",
+    "line16": "(En els tests d'Ilerna la resposta correcte ve marcada en color vermell. Com aquí no tenim colors, substituirem el enumerador de la resposta correcte per un asterisc)\n",
+    "line17": "```\n\n1- De quin color és el cel?  \n   a) Blau  \n   b) Negre  \n   *) Depen de si és de dia o de nit \n   d) Ninguna de les anteriors \n  \n```\n",
+    "line18": "Cal tenir en compte que:  \n",
+    "line19": "- les preguntes han d'estar en **ordre seqüencial** (1. , 2. , 3. , ...)  \n",
+    "line20": "- el format de la pregunta és [numero][guió][espai]Pregunta. La pregunta pot constar de més d'una línia.  \n",
+    "line21": "- el format de la resposta és [lletra][perèntesi tancat][espai]Resposta.  \n",
     "home": "Inici"
   }
 }

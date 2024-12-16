@@ -21,7 +21,8 @@
     "check": "Check test",
     "noTestFound": "Check test before start",
     "testFound": "%d questions have been found.",
-    "new": "New test"
+    "new": "New test",
+    "selectTest": "Select a test"
   },
   "questions": {
     "counter": "Question %d of %d",
@@ -39,16 +40,28 @@
     "brief": "Correct answers: %d/%d. Average: %d%"
   },
   "help": {
-    "title": "Question Format",
-    "line1": "Each question consists of three parts: Title, Possible Answers, Correct Answer Number.  \n",
-    "line2": "```\n\n1. Question title  \n   Possible answer 1  \n   Possible answer 2  \n   ... \nCorrect answer: X  \n  \n```\n",
-    "line3": "Example  \n",
-    "line4": "```\n\n1. What color is the sky?  \n   Blue  \n   Black  \n   It depends on whether it is day or night  \n   None of the above  \nCorrect answer: 3  \n  \n```\n",
-    "line5": "Please note that:  \n",
-    "line6": "- Questions must be in **sequential order** (1., 2., 3., ...)  \n",
-    "line7": "- The format of the question is [number][dot][space]Question  \n",
-    "line8": "- The text for the answer line must explicitly be **Correct answer: X**  \n",
-    "line9": "  - where X is the solution based on its position. In this example, **3** is _\"It depends on whether it is day or night\"_",
+    "title": "Quiz Format",
+    "line1": "### APOSE\n",
+    "line2": "Each question consists of three parts: Title, Possible solutions, Correct answer number.  \n",
+    "line3": "```\n\n1. Question title  \n   Possible solution 1  \n   Possible solution 2  \n   ... \nCorrect answer: X  \n  \n```\n",
+    "line4": "Example  \n",
+    "line5": "```\n\n1. What color is the sky?  \n   Blue  \n   Black  \n   Depends on whether it's day or night \n   None of the above \nCorrect answer: 3  \n  \n```\n",
+    "line6": "Please note:  \n",
+    "line7": "- Questions must be in **sequential order** (1. , 2. , 3. , ...)  \n",
+    "line8": "- The question format is [number][dot][space]Question  \n",
+    "line9": "- The answer line must explicitly state **Correct answer: X**  \n",
+    "line10": "  -  where X is the solution according to its position. In this example, **3** is _\"Depends on whether it's day or night\"_  \n",
+    "line11": "  \n",
+    "line12": "### ILERNA\n",
+    "line13": "Each question consists of two parts: Title and Possible solutions.  \n",
+    "line14": "```\n\n1- Question title  \n   a) possible solution 1  \n   b) possible solution 2  \n   ... \n  \n```\n",
+    "line15": "Example  \n",
+    "line16": "(In Ilerna tests, the correct answer is marked in red. Since we can't use colors here, we will replace the enumerator of the correct answer with an asterisk)\n",
+    "line17": "```\n\n1- What color is the sky?  \n   a) Blue  \n   b) Black  \n   *) Depends on whether it's day or night \n   d) None of the above \n  \n```\n",
+    "line18": "Please note:  \n",
+    "line19": "- Questions must be in **sequential order** (1. , 2. , 3. , ...)  \n",
+    "line20": "- The question format is [number][hyphen][space]Question. The question may consist of more than one line.  \n",
+    "line21": "- The answer format is [letter][closed parenthesis][space]Answer.  \n",
     "home": "Home"
   }
 }

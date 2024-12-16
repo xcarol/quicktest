@@ -20,6 +20,18 @@ const addSolution = (questions, solution) => {
   return true;
 };
 
+const addIlernaSolutionPart = (questions, solutionPart) => {
+  if (questions.length === 0) {
+    return false;
+  }
+  const lastQuestion = questions.at(questions.length - 1);
+  const solution = lastQuestion.solutions.at(lastQuestion.solutions.length - 1);
+
+  lastQuestion.solutions[lastQuestion.solutions.length - 1] = `${solution} ${solutionPart}`;
+
+  return true;
+};
+
 const setAnswer = (questions, number) => {
   if (questions.length === 0) {
     return false;
@@ -60,6 +72,17 @@ const isIlernaAnswer = (answer) => {
 const isIlernaSolution = (solution) => {
   const solutionParts = solution.split(')');
   return solutionParts.length === 2 && solutionParts.at(0).trim() !== '';
+};
+
+const isIlernaSolutionPart = (questions, solutionPart) => {
+  if (questions.length === 0) {
+    return false;
+  }
+  const lastQuestion = questions.at(questions.length - 1);
+  if (lastQuestion.solutions.length === 0) {
+    return false;
+  }
+  return lastQuestion.answer === 0 && isIlernaSolution(solutionPart) === false;
 };
 
 const isIlernaTest = (test) => {
@@ -109,10 +132,9 @@ const parse = (source) => {
 
     if (trimmedLine.length > 0) {
       const isQuestion = trimmedLine.split(/[.|-]+[ |\t]+/);
+      const questionNumber = parseInt(isQuestion.at(0), 10);
 
-      if (isQuestion.length > 1) {
-        const questionNumber = parseInt(isQuestion.at(0), 10);
-
+      if (isQuestion.length > 1 && questionNumber > 0) {
         if (isQuestionNumberInSequence(questions, questionNumber)) {
           if (lastQuestionIsFinished(questions) === false) {
             throwError('Last question is not finished', lineCount);
@@ -132,6 +154,10 @@ const parse = (source) => {
         if (setIlernaAnswer(questions) === false) {
           throwError('Incorrect answer', lineCount);
         }
+    } else if (isIlernaSolutionPart(questions, trimmedLine)) {
+      if (addIlernaSolutionPart(questions, trimmedLine) === false) {
+        throwError('No questions found', lineCount);
+      }
     } else if (isAposeAnswer(trimmedLine)) {
         const answer = getAnswer(trimmedLine);
         const answerNumber = parseInt(answer.at(1), 10);

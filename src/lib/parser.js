@@ -70,8 +70,10 @@ const isIlernaAnswer = (answer) => {
 };
 
 const isIlernaSolution = (solution) => {
+  const option = /^[ |\t]*[0-9a-zA-Z*]+/;
   const solutionParts = solution.split(')');
-  return solutionParts.length === 2 && solutionParts.at(0).trim() !== '';
+  const solutionOption = solutionParts.at(0).trim();
+  return solutionParts.length >= 2 && option.test(solutionOption) && solutionOption.length < 3;
 };
 
 const isIlernaSolutionPart = (questions, solutionPart) => {
@@ -82,7 +84,7 @@ const isIlernaSolutionPart = (questions, solutionPart) => {
   if (lastQuestion.solutions.length === 0) {
     return false;
   }
-  return lastQuestion.answer === 0 && isIlernaSolution(solutionPart) === false;
+  return isIlernaSolution(solutionPart) === false;
 };
 
 const isIlernaTest = (test) => {
@@ -154,11 +156,7 @@ const parse = (source) => {
         if (setIlernaAnswer(questions) === false) {
           throwError('Incorrect answer', lineCount);
         }
-    } else if (isIlernaSolutionPart(questions, trimmedLine)) {
-      if (addIlernaSolutionPart(questions, trimmedLine) === false) {
-        throwError('No questions found', lineCount);
-      }
-    } else if (isAposeAnswer(trimmedLine)) {
+      } else if (isAposeAnswer(trimmedLine)) {
         const answer = getAnswer(trimmedLine);
         const answerNumber = parseInt(answer.at(1), 10);
         if (answerNumber > 0) {
@@ -167,6 +165,10 @@ const parse = (source) => {
           }
         } else {
           throwError("Invalid 'Respuesta correcta:'", lineCount);
+        }
+      } else if (isIlernaSolutionPart(questions, trimmedLine)) {
+        if (addIlernaSolutionPart(questions, trimmedLine) === false) {
+          throwError('No questions found', lineCount);
         }
       } else if (
         ilernaTest &&

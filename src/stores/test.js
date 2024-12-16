@@ -1,13 +1,14 @@
+/* eslint-disable import/no-unresolved */
 import { defineStore } from 'pinia';
 import { useLocalStorage } from '@vueuse/core';
 import textParser from '../lib/parser';
 
-// eslint-disable-next-line import/no-unresolved
-const testM01 = await import('../../ilerna-tests/M01 - CONTEXTO DE LA INTERVENCIÓN SOCIAL.txt?raw');
+const testM01V01 = await import('../../ilerna-tests/M01 - V1 - CONTEXTO DE LA INTERVENCIÓN SOCIAL.txt?raw');
+const testM01V02 = await import('../../ilerna-tests/M01 - V2 - CONTEXTO DE LA INTERVENCIÓN SOCIAL.txt?raw');
 
 const appTests = [
-  { name: 'M01 - CONTEXTO DE LA INTERVENCIÓN SOCIAL', content: testM01.default },
-  { name: '1', content: '2' },
+  { name: 'M01 - V1 - CONTEXTO DE LA INTERVENCIÓN SOCIAL', content: testM01V01.default },
+  { name: 'M01 - V2 - CONTEXTO DE LA INTERVENCIÓN SOCIAL', content: testM01V02.default },
 ];
 
 export const useTestStore = defineStore('test', {

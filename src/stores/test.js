@@ -5,10 +5,12 @@ import textParser from '../lib/parser';
 
 const testM01V01 = await import('../../ilerna-tests/M01 - V1 - CONTEXTO DE LA INTERVENCIÓN SOCIAL.txt?raw');
 const testM01V02 = await import('../../ilerna-tests/M01 - V2 - CONTEXTO DE LA INTERVENCIÓN SOCIAL.txt?raw');
+const testM01V03 = await import('../../ilerna-tests/M01 - V3 - CONTEXTO DE LA INTERVENCIÓN SOCIAL.txt?raw');
 
 const appTests = [
   { name: 'M01 - V1 - CONTEXTO DE LA INTERVENCIÓN SOCIAL', content: testM01V01.default },
   { name: 'M01 - V2 - CONTEXTO DE LA INTERVENCIÓN SOCIAL', content: testM01V02.default },
+  { name: 'M01 - V3 - CONTEXTO DE LA INTERVENCIÓN SOCIAL', content: testM01V03.default },
 ];
 
 export const useTestStore = defineStore('test', {

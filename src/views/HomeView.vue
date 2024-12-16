@@ -113,6 +113,7 @@ const newTest = () => {
 
 const selectTest = (name) => {
   testContent.value = testStore.getTestByName(name);
+  testStore.resetTest();
 };
 
 onBeforeMount(() => {

@@ -2,8 +2,11 @@ import { defineStore } from 'pinia';
 import { useLocalStorage } from '@vueuse/core';
 import textParser from '../lib/parser';
 
+// eslint-disable-next-line import/no-unresolved
+const testM01 = await import('../../ilerna-tests/M01 - CONTEXTO DE LA INTERVENCIÓN SOCIAL.txt?raw');
+
 const appTests = [
-  { name: 'a', content: 'b' },
+  { name: 'M01 - CONTEXTO DE LA INTERVENCIÓN SOCIAL', content: testM01.default },
   { name: '1', content: '2' },
 ];
 

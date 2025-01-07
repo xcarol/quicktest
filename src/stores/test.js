@@ -26,8 +26,12 @@ export const useTestStore = defineStore('test', {
       const testM03V01 = await import(
         '../../ilerna-tests/M03 - V1 - PROMOCIÓN DE LA AUTONOMÍA PERSONAL.txt?raw'
       );
+      const testM03V02 = await import(
+        '../../ilerna-tests/M03 - V2 - PROMOCIÓN DE LA AUTONOMÍA PERSONAL.txt?raw'
+      );
       this.tests = [
         { name: 'M03 - V1 - PROMOCIÓN DE LA AUTONOMÍA PERSONAL', content: testM03V01.default },
+        { name: 'M03 - V2 - PROMOCIÓN DE LA AUTONOMÍA PERSONAL', content: testM03V02.default },
         { name: 'M01 - V1 - CONTEXTO DE LA INTERVENCIÓN SOCIAL', content: testM01V01.default },
         { name: 'M01 - V2 - CONTEXTO DE LA INTERVENCIÓN SOCIAL', content: testM01V02.default },
         { name: 'M01 - V3 - CONTEXTO DE LA INTERVENCIÓN SOCIAL', content: testM01V03.default },

@@ -87,7 +87,7 @@ export const useTestStore = defineStore('test', {
           }
         }
 
-        testAverage = (correctAnswers / this.test.length) * 100;
+        testAverage = Math.floor((correctAnswers / this.test.length) * 100);
       }
 
       return {

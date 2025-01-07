@@ -23,7 +23,19 @@ export const useTestStore = defineStore('test', {
       const testM01V03 = await import(
         '../../ilerna-tests/M01 - V3 - CONTEXTO DE LA INTERVENCIÓN SOCIAL.txt?raw'
       );
+      const testM03V01 = await import(
+        '../../ilerna-tests/M03 - V1 - PROMOCIÓN DE LA AUTONOMÍA PERSONAL.txt?raw'
+      );
+      const testM03V02 = await import(
+        '../../ilerna-tests/M03 - V2 - PROMOCIÓN DE LA AUTONOMÍA PERSONAL.txt?raw'
+      );
+      const testM03V03 = await import(
+        '../../ilerna-tests/M03 - V2 - PROMOCIÓN DE LA AUTONOMÍA PERSONAL.txt?raw'
+      );
       this.tests = [
+        { name: 'M03 - V1 - PROMOCIÓN DE LA AUTONOMÍA PERSONAL', content: testM03V01.default },
+        { name: 'M03 - V2 - PROMOCIÓN DE LA AUTONOMÍA PERSONAL', content: testM03V02.default },
+        { name: 'M03 - V3 - PROMOCIÓN DE LA AUTONOMÍA PERSONAL', content: testM03V03.default },
         { name: 'M01 - V1 - CONTEXTO DE LA INTERVENCIÓN SOCIAL', content: testM01V01.default },
         { name: 'M01 - V2 - CONTEXTO DE LA INTERVENCIÓN SOCIAL', content: testM01V02.default },
         { name: 'M01 - V3 - CONTEXTO DE LA INTERVENCIÓN SOCIAL', content: testM01V03.default },
@@ -83,7 +95,7 @@ export const useTestStore = defineStore('test', {
           }
         }
 
-        testAverage = (correctAnswers / this.test.length) * 100;
+        testAverage = Math.floor((correctAnswers / this.test.length) * 100);
       }
 
       return {
